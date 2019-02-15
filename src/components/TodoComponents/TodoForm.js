@@ -43,7 +43,6 @@ render() {
 
         <div className="form-btns">
           <button className='add-btn' onClick={this.submitTask} type="submit"> Add </button>
-          <button className='clear-btn' onClick={this.props.clearCompleted} type="submit"> Clear </button>
         </div>
       </form>
     );

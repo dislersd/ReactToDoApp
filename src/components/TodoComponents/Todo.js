@@ -6,7 +6,13 @@ const ToDo = props => {
       <li 
       className={`toDoItem ${props.toDo.completed ? "complete" : null}`}
       onClick={() => props.toggle(props.toDo.id)}
-      > {props.toDo.task} </li>
+      > 
+       {props.toDo.task} 
+      </li>
+      <button 
+       className='clear-btn' 
+       onClick={props.clearCompleted} 
+       type="submit"> X </button>
     </ul>
 
   );

@@ -98,6 +98,10 @@ input:focus {
   border-bottom: 2px solid #EF5E4A;
 }
 
+ul {
+  display: flex;
+}
+
 li {
   font-size: 20px;
   margin: 20px;
