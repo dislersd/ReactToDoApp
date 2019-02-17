@@ -1,21 +1,27 @@
-import React from "react"
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ToDo = props => {
   return (
-    <ul>
-      <li 
-      className={`toDoItem ${props.toDo.completed ? "complete" : null}`}
-      onClick={() => props.toggle(props.toDo.id)}
-      > 
-       {props.toDo.task} 
-      </li>
-      <button 
-       className='clear-btn' 
-       onClick={props.clearCompleted} 
-       type="submit"> X </button>
-    </ul>
-
+    <div className="to-do-wrapper">
+      <ul>
+        <li
+          className={`toDoItem ${props.toDo.completed ? "complete" : null}`}
+          onClick={() => props.toggle(props.toDo.id)}
+        >
+          {props.toDo.task}
+        </li>
+      </ul>
+      <button
+        className="clear-btn"
+        onClick={props.clearCompleted}
+        type="submit"
+      >
+        {" "}
+        <FontAwesomeIcon icon="times" />{" "}
+      </button>
+    </div>
   );
-}
+};
 
 export default ToDo;

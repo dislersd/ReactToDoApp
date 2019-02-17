@@ -74,6 +74,7 @@ class App extends React.Component {
         <p>Click your task when complete</p>
       </header>
         <ToDoForm 
+        icon="coffee"
         value={this.state.task}  
         addToDo={this.addToDo}
         clearCompleted={this.clearCompleted}
