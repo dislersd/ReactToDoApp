@@ -77,12 +77,12 @@ class App extends React.Component {
         icon="coffee"
         value={this.state.task}  
         addToDo={this.addToDo}
-        clearCompleted={this.clearCompleted}
         search={this.search}
         />
         <ToDoList 
         toDo={this.state.toDo} 
         toggle={this.toggle}  
+        clearCompleted={this.clearCompleted}
         />
 
 

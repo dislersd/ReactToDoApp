@@ -36,6 +36,8 @@ class ToDoList extends React.Component {
           key={index}
           toDo={toDoFromMap}
           toggle={this.props.toggle}
+          clearCompleted={this.props.clearCompleted}
+          info={this.props.toDo}
           />
         )}
     </div>
