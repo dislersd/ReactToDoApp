@@ -1,4 +1,4 @@
-# ReactToDoApp
+# ReactToDoApp ⚛️
 
-My first project with React. Building this taught me a lot about state and props as well as the React event loop.
+My first project with React. I learned a lot about state, props, and the React event loop while building this simple app.
 ***
