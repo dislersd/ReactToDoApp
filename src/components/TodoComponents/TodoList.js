@@ -31,13 +31,12 @@ class ToDoList extends React.Component {
   render() {
   return (
     <div className="todo-all">
-        {this.props.toDo.map((toDoFromMap, index) => 
+        {this.props.toDo.map( toDoFromMap => 
           <ToDo 
-          key={index}
+          key={toDoFromMap.id}
           toDo={toDoFromMap}
+          delete={this.props.delete}
           toggle={this.props.toggle}
-          clearCompleted={this.props.clearCompleted}
-          info={this.props.toDo}
           />
         )}
     </div>

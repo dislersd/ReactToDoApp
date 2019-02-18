@@ -28,6 +28,20 @@ class App extends React.Component {
     };
   }
 
+  // deleteTask = key => {
+  //   console.log(key)
+  //   this.setState({
+  //     toDo: this.state.toDo.splice(key, 1)
+  //     })
+  //   }
+
+  removeItem = (itemId) => {
+    console.log(itemId)
+    const toDo = [...this.state.toDo];
+    const newToDo = toDo.filter( item => item.id !== itemId);
+    this.setState({ toDo: newToDo});
+  }
+
   addToDo = (e, task) => {
     e.preventDefault();
     const newToDo = {
@@ -52,12 +66,12 @@ class App extends React.Component {
     })
   }
 
-  clearCompleted = e => {
-    e.preventDefault();
-    this.setState({
-      toDo: this.state.toDo.filter(item => !item.completed)
-    })
-  }
+  // clearCompleted = e => {
+  //   e.preventDefault();
+  //   this.setState({
+  //     toDo: this.state.toDo.filter(item => !item.completed)
+  //   })
+  // }
 
   search = (e) => {
     this.setState({
@@ -82,7 +96,7 @@ class App extends React.Component {
         <ToDoList 
         toDo={this.state.toDo} 
         toggle={this.toggle}  
-        clearCompleted={this.clearCompleted}
+        delete={this.removeItem}
         />
 
 
