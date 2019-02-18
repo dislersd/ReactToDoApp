@@ -9,6 +9,7 @@ class ToDoForm extends React.Component {
 constructor(props) {
   super(props);
   this.state = {
+    toDo: this.props.toDo,
     task: ''
   }
 }
@@ -22,6 +23,14 @@ handleChanges = e => {
 submitTask = e => {
   this.setState({ task: ''});
   this.props.addToDo(e, this.state.task)
+}
+
+showHide = e => {
+  if (e.target.value === '') {
+    e.target.style.display = 'none'
+  } else {
+    return e.target
+  }
 }
 
 render() {
@@ -45,7 +54,15 @@ render() {
               name="task"
               placeholder="enter a to do..."
             />
-            <button className='add-btn' onClick={this.submitTask} type="submit">  <FontAwesomeIcon icon="plus" /> </button>
+            <button
+            className={`add-btn ${this.state.task ? null : "hide"}`}
+            onClick={this.submitTask}
+            type="submit"
+            value={this.state.task}
+            onLoad={this.showHide}
+            > 
+            <FontAwesomeIcon icon="plus" /> 
+            </button>
           </div>
         </div>
 

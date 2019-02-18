@@ -14,7 +14,7 @@ const ToDo = props => {
           </li>
         </ul>
         <button
-          className="clear-btn"
+          className="clear-btn" 
           onClick={ () => props.delete(props.toDo.id)}
           type="submit"
         >

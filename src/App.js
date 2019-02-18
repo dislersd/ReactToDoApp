@@ -28,22 +28,16 @@ class App extends React.Component {
     };
   }
 
-  // deleteTask = key => {
-  //   console.log(key)
-  //   this.setState({
-  //     toDo: this.state.toDo.splice(key, 1)
-  //     })
-  //   }
-
-  removeItem = (itemId) => {
-    console.log(itemId)
-    const toDo = [...this.state.toDo];
-    const newToDo = toDo.filter( item => item.id !== itemId);
+  removeItem = itemId => {
+    const newToDo = this.state.toDo.filter( item => item.id !== itemId);
     this.setState({ toDo: newToDo});
   }
 
   addToDo = (e, task) => {
     e.preventDefault();
+    if (e.target.value === '') {
+      return
+    }
     const newToDo = {
       task: task,
       id: Date.now(),
@@ -65,13 +59,6 @@ class App extends React.Component {
       })
     })
   }
-
-  // clearCompleted = e => {
-  //   e.preventDefault();
-  //   this.setState({
-  //     toDo: this.state.toDo.filter(item => !item.completed)
-  //   })
-  // }
 
   search = (e) => {
     this.setState({

@@ -189,6 +189,10 @@ button {
   align-items: center;
 }
 
+.hide {
+  display: none;
+}
+
 
 
 
