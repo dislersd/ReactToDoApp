@@ -37,13 +37,13 @@ render() {
     return (
       <form className="todo-form">
         <div className="form-inputs">
-          <input 
+          {/* <input 
           type="text"
           name="search"
           autoComplete="off"
           placeholder="search for task"
           onChange={this.props.search}
-          />
+          /> */}
           <div className="input-and-add">
             <input
               className="task-input"
