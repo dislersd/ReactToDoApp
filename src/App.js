@@ -20,13 +20,14 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      toDo: toDoArray,
+      toDo: [],
       task: "",
       id: Date.now(),
       completed: false,
-      filter: []
+      filtered: []
     };
   }
+
 
   removeItem = itemId => {
     const newToDo = this.state.toDo.filter(item => item.id !== itemId);
@@ -60,11 +61,12 @@ class App extends React.Component {
     });
   };
 
-  search = e => {
-    this.setState({
-      toDo: this.state.toDo.filter(item => item.task.includes(e.target.value))
-    });
-  };
+  // search = e => {
+  //   this.setState({
+  //     toDo: this.state.toDo.filter(item => item.task.includes(e.target.value))
+  //   });
+  // };
+
 
   render() {
     return (
@@ -78,10 +80,11 @@ class App extends React.Component {
               icon="coffee"
               value={this.state.task}
               addToDo={this.addToDo}
-              search={this.search}
             />
             <ToDoList
-              toDo={this.state.toDo}
+              toDo={
+              this.state.filtered.length > 0 ? this.state.filteredPosts : this.state.toDo
+              }
               toggle={this.toggle}
               delete={this.removeItem}
             />
